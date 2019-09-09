@@ -24,7 +24,18 @@ def is_word_guessed(secret_word, letters_guessed):
     Returns: 
         bool: True only if all the letters of secret_word are in letters_guessed, False otherwise
     '''
+    
     # TODO: Loop through the letters in the secret_word and check if a letter is not in lettersGuessed
+    counter = 0
+    for i in secret_word():
+        if i in letters_guessed:
+            counter += 1
+    
+    if counter == len(secret_word):
+        return True
+    else:
+        return False
+
     pass
 
 def get_guessed_word(secret_word, letters_guessed):
@@ -38,9 +49,9 @@ def get_guessed_word(secret_word, letters_guessed):
     '''
 
     #TODO: Loop through the letters in secret word and build a string that shows the letters that have been guessed correctly so far that are saved in letters_guessed and underscores for the letters that have not been guessed yet
+    
 
-    pass
-
+#print (get_guessed_word,("cat", "a"))
 
 def is_guess_in_word(guess, secret_word):
     '''
@@ -52,9 +63,7 @@ def is_guess_in_word(guess, secret_word):
         bool: True if the guess is in the secret_word, False otherwise
     '''
     #TODO: check if the letter guess is in the secret word
-
     pass
-
 
 
 
@@ -67,7 +76,7 @@ def spaceman(secret_word):
 
 
     #TODO: show the player information about the game according to the project spec
-
+    print ("Welcome to Spaceman! You have been given a random secret word to guess. You have 7 chances to guess all of the letters in the secret word. If you guess more than 7 random letters incorrectly you lose. If guessed correctly, you win!")
     #TODO: Ask the player to guess one letter per round and check that it is only one letter
 
     #TODO: Check if the guessed letter is in the secret or not and give the player feedback
