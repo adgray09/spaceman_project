@@ -88,9 +88,9 @@ def spaceman(secret_word):
     print ('''Welcome to Spaceman! You have been given a random secret word to guess. You have 7 chances to guess all of the letters in the secret word. If you guess more than 7 random letters incorrectly, you lose. If guessed correctly, you win!''')
     #TODO: Ask the player to guess one letter per round and check that it is only one letter
     letters_guessed = []
-    life = 3
-    while life >= 0 and is_word_guessed(secret_word, letters_guessed) == False:
-        guess = input ("Guess a letter")
+    life = 7
+    while life > 0 and is_word_guessed(secret_word, letters_guessed) == False:
+        guess = input ("Guess a letter ")
         print(guess)
         letters_guessed.append(guess)
 
@@ -109,8 +109,8 @@ def spaceman(secret_word):
         is_word_guessed (letters_guessed, secret_word)
 
     if life == 0:
-        print ("You lost")
-    if is_guess_in_word == True:
+        print ("You lost! Try again!")
+    if life > 0:
         print ("You win!")
 #These function calls that will start the game
 secret_word = load_word()
