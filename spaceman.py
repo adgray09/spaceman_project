@@ -91,7 +91,7 @@ def spaceman(secret_word):
     life = 7
     while life > 0 and is_word_guessed(secret_word, letters_guessed) == False:
         guess = input ("Guess a letter ")
-        print("You have " + str(life) + " guesses left.") 
+        print("You have " + str(life) + " guesses") 
         letters_guessed.append(guess)
 
         #TODO: Check if the guessed letter is in the secret or not and give the player feedback
@@ -110,8 +110,10 @@ def spaceman(secret_word):
 
     if life == 0:
         print ("You lost! Try again!")
+        print ("the secret word was " + secret_word + "!")
     if life > 0:
         print ("You win!")
+        
 #These function calls that will start the game
 secret_word = load_word()
 spaceman(secret_word)
