@@ -99,6 +99,7 @@ def spaceman(secret_word):
         else:
             print ("Nice try! Guess again")
             life -= 1
+
         
         #TODO: show the guessed word so far
         print (get_guessed_word(secret_word, letters_guessed))
@@ -113,7 +114,7 @@ def spaceman(secret_word):
     if life > 0:
         print ("You win!")
         
-        input("")
+        
 play_again = "Y" 
 while play_again == "Y":
     secret_word = load_word()
