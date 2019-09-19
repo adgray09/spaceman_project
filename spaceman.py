@@ -1,4 +1,5 @@
 import random
+import unittest
 
 def load_word():
     '''
@@ -117,9 +118,31 @@ def spaceman(secret_word):
         
 play_again = "Y" 
 while play_again == "Y":
+    
     secret_word = load_word()
     spaceman(secret_word)
 
     play_again = input("to play again type 'Y', if not press any key.\n")
 print ("Thanks for playng!")
+
+# Test Functions
+
+class spaceman_Tests(unittest.TestCase):
+    def test_is_word_guessed(self):   
+        self.assertEqual(is_word_guessed("cat", "act"), True)
+
+    def test_get_guessed_word_false(self):
+        self.assertEqual(is_word_guessed("cat", "walalalal"), False)
+
+    def test_is_guess_in_word(self):
+        self.assertEqual(is_guess_in_word("banana", "d"), False)
+    
+   
+
+
+
+
+
 #These function calls that will start the game
+
+unittest.main()
